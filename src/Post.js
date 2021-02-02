@@ -11,7 +11,6 @@ const Post = ({
     displayName,
     userName,
     verified,
-    timestamp,
     text,
     image,
     avatar
@@ -19,21 +18,21 @@ const Post = ({
     return(
         <div className="post" >
             <div className="post_avatar" >
-                <Avatar src="https://img.begroup.co/-C0GPz-i5WwA/AAAAAAAAAAI/AAAAAAAAABE/-lceuv_PyAQ/.jpg"/>
+                <Avatar src={avatar}/>
             </div>
             <div className="post__body" >
                 <div className="post__header" >
                     <div className="post__headerText" >
-                        <h3>Sara jay<span className="post__headerSpecial" >
-                            <VerifiedUserIcon className="post__badge"/> @bpsahota
+                        <h3>{displayName}<span className="post__headerSpecial" >
+                            {verified && <VerifiedUserIcon className="post__badge"/>} @{userName}
                             </span> 
                         </h3>
                     </div>
                     <div className="post_headerDescription" >
-                        <p>I challenge you to a deepthroat</p>
+                        <p>{text}</p>
                     </div>
                 </div>
-                <img src="https://cdni.pornpics.com/1280/7/83/57918215/57918215_086_03cd.jpg" alt="sara darling" />
+                <img src={image} alt={displayName} />
                 <div className="post__footer" >
                     <ChatBubbleOutlineIcon fontSize="small" />
                     <RepeatIcon fontSize="small" />
